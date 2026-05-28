@@ -1,0 +1,79 @@
+# GlitchTip — Sentry-совместимый трекер ошибок, self-hosted.
+#
+# Запуск: docker compose -f docker-compose.glitchtip.yml up -d
+# Документация: https://glitchtip.com/documentation/install
+#
+# Требует ~500MB RAM (PostgreSQL+Redis+web+worker).
+# Открывает порт 8000 на хосте — закройте файрволом или проксируйте
+# через nginx с basic-auth для production.
+
+services:
+  glitchtip-postgres:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${GLITCHTIP_POSTGRES_PASSWORD}
+      POSTGRES_DB: glitchtip
+    volumes:
+      - glitchtip_postgres:/var/lib/postgresql/data
+    networks:
+      - glitchtip_net
+
+  glitchtip-redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    networks:
+      - glitchtip_net
+
+  glitchtip-web:
+    image: glitchtip/glitchtip:latest
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://postgres:${GLITCHTIP_POSTGRES_PASSWORD}@glitchtip-postgres:5432/glitchtip
+      REDIS_URL: redis://glitchtip-redis:6379/0
+      SECRET_KEY: ${GLITCHTIP_SECRET_KEY}
+      PORT: "8000"
+      EMAIL_URL: ${GLITCHTIP_EMAIL_URL:-consolemail://}
+      GLITCHTIP_DOMAIN: ${GLITCHTIP_DOMAIN:-http://localhost:8000}
+      DEFAULT_FROM_EMAIL: ${GLITCHTIP_FROM_EMAIL:-glitchtip@localhost}
+    depends_on:
+      - glitchtip-postgres
+      - glitchtip-redis
+    ports:
+      - "127.0.0.1:8001:8000"  # доступен только локально, проксируй через nginx
+    networks:
+      - glitchtip_net
+
+  glitchtip-worker:
+    image: glitchtip/glitchtip:latest
+    restart: unless-stopped
+    command: ./bin/run-celery-with-beat.sh
+    environment:
+      DATABASE_URL: postgres://postgres:${GLITCHTIP_POSTGRES_PASSWORD}@glitchtip-postgres:5432/glitchtip
+      REDIS_URL: redis://glitchtip-redis:6379/0
+      SECRET_KEY: ${GLITCHTIP_SECRET_KEY}
+    depends_on:
+      - glitchtip-postgres
+      - glitchtip-redis
+    networks:
+      - glitchtip_net
+
+  glitchtip-migrate:
+    image: glitchtip/glitchtip:latest
+    restart: "no"
+    command: ./bin/run-migrate.sh
+    environment:
+      DATABASE_URL: postgres://postgres:${GLITCHTIP_POSTGRES_PASSWORD}@glitchtip-postgres:5432/glitchtip
+      SECRET_KEY: ${GLITCHTIP_SECRET_KEY}
+    depends_on:
+      - glitchtip-postgres
+    networks:
+      - glitchtip_net
+
+volumes:
+  glitchtip_postgres:
+
+networks:
+  glitchtip_net:
+    driver: bridge

@@ -1,0 +1,51 @@
+<!-- subject: Подтверждение регистрации в МедАрхив -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Подтверждение регистрации</title>
+</head>
+<body style="margin:0;padding:0;background:#f5f7fa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1a1a1a;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f5f7fa;padding:24px 0;">
+    <tr>
+      <td align="center">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;background:#ffffff;border-radius:8px;overflow:hidden;">
+          <tr>
+            <td style="padding:32px 32px 16px 32px;">
+              <h1 style="margin:0 0 16px 0;font-size:22px;font-weight:600;">Здравствуйте, {{ username }}!</h1>
+              <p style="margin:0 0 24px 0;font-size:15px;line-height:1.5;">
+                Вы зарегистрировались в МедАрхив. Чтобы активировать аккаунт,
+                введите код подтверждения на странице верификации:
+              </p>
+              <div style="background:#f0f4f8;border-radius:8px;padding:20px;text-align:center;margin:0 0 24px 0;">
+                <div style="font-size:32px;font-weight:700;letter-spacing:8px;color:#1a73e8;">{{ code }}</div>
+              </div>
+              <p style="margin:0 0 16px 0;font-size:14px;line-height:1.5;">
+                Код действителен в течение <strong>{{ ttl_hours }} часов</strong>.
+              </p>
+              <p style="margin:0 0 24px 0;font-size:14px;line-height:1.5;">
+                <a href="{{ frontend_base_url }}/verify-email" style="color:#1a73e8;text-decoration:none;">
+                  Перейти на страницу подтверждения →
+                </a>
+              </p>
+              <hr style="border:none;border-top:1px solid #e0e4e8;margin:24px 0;">
+              <p style="margin:0;font-size:13px;color:#5f6c7b;line-height:1.5;">
+                Если вы не регистрировались в МедАрхив, просто проигнорируйте это
+                письмо — аккаунт не активируется без ввода кода.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:16px 32px;background:#fafbfc;border-top:1px solid #e0e4e8;">
+              <p style="margin:0;font-size:12px;color:#8b95a1;text-align:center;">
+                МедАрхив — персональный архив медицинских данных
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

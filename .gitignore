@@ -1,0 +1,67 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+
+# --- Node / Frontend ---
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+
+# --- Env files ---
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# --- Docker volumes / runtime data ---
+# Игнорируем тома Docker и каталоги с пользовательскими файлами,
+# но НЕ backend/app/data/ — там лежат справочники (analysis_norms.json,
+# icd10_ru.json), которые ДОЛЖНЫ быть в репозитории.
+/data/
+mariadb_data/
+redis_data/
+frontend/data/
+backend/uploads/
+backend/logs/
+
+# --- IDE ---
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Claude Code (per-user permissions) ---
+.claude/settings.local.json
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# --- Build artefacts ---
+*.egg-info/
+build/
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Reports ---
+docs/reports/

@@ -1,0 +1,549 @@
+{
+  "hemoglobin": {
+    "name_ru": "Гемоглобин",
+    "name_en": "Hemoglobin",
+    "unit": "г/л",
+    "alternative_units": ["g/dl", "g/L"],
+    "category": "ОАК",
+    "description": "Белок эритроцитов, переносящий кислород",
+    "synonyms": ["HGB", "Hb", "гемоглобин", "haemoglobin"],
+    "norms": [
+      {"gender": "male",   "age_from": 18, "age_to": 200, "min": 130, "max": 170},
+      {"gender": "female", "age_from": 18, "age_to": 200, "min": 120, "max": 150},
+      {"gender": "any",    "age_from": 0,  "age_to": 17,  "min": 110, "max": 160}
+    ]
+  },
+  "erythrocytes": {
+    "name_ru": "Эритроциты",
+    "name_en": "Erythrocytes (RBC)",
+    "unit": "×10¹²/л",
+    "alternative_units": ["10^12/L"],
+    "category": "ОАК",
+    "description": "Количество красных кровяных телец",
+    "synonyms": ["RBC", "эритроциты"],
+    "norms": [
+      {"gender": "male",   "age_from": 18, "age_to": 200, "min": 4.0, "max": 5.5},
+      {"gender": "female", "age_from": 18, "age_to": 200, "min": 3.7, "max": 4.7}
+    ]
+  },
+  "leukocytes": {
+    "name_ru": "Лейкоциты",
+    "name_en": "Leukocytes (WBC)",
+    "unit": "×10⁹/л",
+    "alternative_units": ["10^9/L"],
+    "category": "ОАК",
+    "description": "Количество белых кровяных клеток",
+    "synonyms": ["WBC", "лейкоциты"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 4.0, "max": 9.0}
+    ]
+  },
+  "platelets": {
+    "name_ru": "Тромбоциты",
+    "name_en": "Platelets (PLT)",
+    "unit": "×10⁹/л",
+    "category": "ОАК",
+    "description": "Кровяные клетки, отвечающие за свёртываемость",
+    "synonyms": ["PLT", "тромбоциты"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 180, "max": 400}
+    ]
+  },
+  "esr": {
+    "name_ru": "СОЭ",
+    "name_en": "ESR",
+    "unit": "мм/ч",
+    "category": "ОАК",
+    "description": "Скорость оседания эритроцитов",
+    "synonyms": ["ESR", "СОЭ"],
+    "norms": [
+      {"gender": "male",   "age_from": 0,  "age_to": 50,  "min": 0, "max": 15},
+      {"gender": "male",   "age_from": 51, "age_to": 200, "min": 0, "max": 20},
+      {"gender": "female", "age_from": 0,  "age_to": 50,  "min": 0, "max": 20},
+      {"gender": "female", "age_from": 51, "age_to": 200, "min": 0, "max": 30}
+    ]
+  },
+  "mcv": {
+    "name_ru": "MCV (средний объём эритроцита)",
+    "name_en": "MCV",
+    "unit": "фл",
+    "category": "ОАК",
+    "synonyms": ["MCV"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 80, "max": 100}
+    ]
+  },
+  "mch": {
+    "name_ru": "MCH (среднее содержание гемоглобина)",
+    "name_en": "MCH",
+    "unit": "пг",
+    "category": "ОАК",
+    "synonyms": ["MCH"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 27, "max": 33}
+    ]
+  },
+  "mchc": {
+    "name_ru": "MCHC (средняя концентрация гемоглобина)",
+    "name_en": "MCHC",
+    "unit": "г/л",
+    "category": "ОАК",
+    "synonyms": ["MCHC"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 320, "max": 360}
+    ]
+  },
+  "hematocrit": {
+    "name_ru": "Гематокрит",
+    "name_en": "Hematocrit",
+    "unit": "%",
+    "category": "ОАК",
+    "synonyms": ["HCT", "гематокрит"],
+    "norms": [
+      {"gender": "male",   "age_from": 18, "age_to": 200, "min": 39, "max": 49},
+      {"gender": "female", "age_from": 18, "age_to": 200, "min": 35, "max": 45}
+    ]
+  },
+  "reticulocytes": {
+    "name_ru": "Ретикулоциты",
+    "name_en": "Reticulocytes",
+    "unit": "%",
+    "category": "ОАК",
+    "synonyms": ["RET", "ретикулоциты"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0.2, "max": 2.0}
+    ]
+  },
+  "glucose": {
+    "name_ru": "Глюкоза",
+    "name_en": "Glucose",
+    "unit": "ммоль/л",
+    "alternative_units": ["mmol/L", "mg/dL"],
+    "category": "Биохимия",
+    "description": "Уровень глюкозы крови натощак",
+    "synonyms": ["GLU", "глюкоза", "сахар"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 3.3, "max": 5.9}
+    ]
+  },
+  "total_protein": {
+    "name_ru": "Общий белок",
+    "name_en": "Total protein",
+    "unit": "г/л",
+    "category": "Биохимия",
+    "synonyms": ["TP", "общий белок"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 65, "max": 85}
+    ]
+  },
+  "albumin": {
+    "name_ru": "Альбумин",
+    "name_en": "Albumin",
+    "unit": "г/л",
+    "category": "Биохимия",
+    "synonyms": ["ALB", "альбумин"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 35, "max": 50}
+    ]
+  },
+  "creatinine": {
+    "name_ru": "Креатинин",
+    "name_en": "Creatinine",
+    "unit": "мкмоль/л",
+    "category": "Биохимия",
+    "synonyms": ["CREA", "креатинин"],
+    "norms": [
+      {"gender": "male",   "age_from": 18, "age_to": 200, "min": 62, "max": 115},
+      {"gender": "female", "age_from": 18, "age_to": 200, "min": 53, "max": 97}
+    ]
+  },
+  "urea": {
+    "name_ru": "Мочевина",
+    "name_en": "Urea",
+    "unit": "ммоль/л",
+    "category": "Биохимия",
+    "synonyms": ["UREA", "мочевина"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 2.5, "max": 8.3}
+    ]
+  },
+  "alt": {
+    "name_ru": "АЛТ",
+    "name_en": "ALT",
+    "unit": "ед/л",
+    "category": "Биохимия",
+    "synonyms": ["ALT", "АЛАТ", "ГПТ"],
+    "norms": [
+      {"gender": "male",   "age_from": 0, "age_to": 200, "min": 0, "max": 41},
+      {"gender": "female", "age_from": 0, "age_to": 200, "min": 0, "max": 31}
+    ]
+  },
+  "ast": {
+    "name_ru": "АСТ",
+    "name_en": "AST",
+    "unit": "ед/л",
+    "category": "Биохимия",
+    "synonyms": ["AST", "АСАТ", "ГОТ"],
+    "norms": [
+      {"gender": "male",   "age_from": 0, "age_to": 200, "min": 0, "max": 37},
+      {"gender": "female", "age_from": 0, "age_to": 200, "min": 0, "max": 31}
+    ]
+  },
+  "ggt": {
+    "name_ru": "ГГТ",
+    "name_en": "GGT",
+    "unit": "ед/л",
+    "category": "Биохимия",
+    "synonyms": ["GGT", "ГГТ", "ГГТП"],
+    "norms": [
+      {"gender": "male",   "age_from": 0, "age_to": 200, "min": 0, "max": 55},
+      {"gender": "female", "age_from": 0, "age_to": 200, "min": 0, "max": 38}
+    ]
+  },
+  "bilirubin_total": {
+    "name_ru": "Билирубин общий",
+    "name_en": "Bilirubin total",
+    "unit": "мкмоль/л",
+    "category": "Биохимия",
+    "synonyms": ["BIL", "билирубин общий"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 5, "max": 21}
+    ]
+  },
+  "bilirubin_direct": {
+    "name_ru": "Билирубин прямой",
+    "name_en": "Bilirubin direct",
+    "unit": "мкмоль/л",
+    "category": "Биохимия",
+    "synonyms": ["DBIL", "билирубин прямой"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0, "max": 5.1}
+    ]
+  },
+  "ldh": {
+    "name_ru": "ЛДГ",
+    "name_en": "LDH",
+    "unit": "ед/л",
+    "category": "Биохимия",
+    "synonyms": ["LDH", "ЛДГ"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 135, "max": 225}
+    ]
+  },
+  "alkaline_phosphatase": {
+    "name_ru": "Щелочная фосфатаза",
+    "name_en": "Alkaline phosphatase",
+    "unit": "ед/л",
+    "category": "Биохимия",
+    "synonyms": ["ALP", "ЩФ"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 40, "max": 150}
+    ]
+  },
+  "crp": {
+    "name_ru": "С-реактивный белок",
+    "name_en": "C-reactive protein",
+    "unit": "мг/л",
+    "category": "Биохимия",
+    "synonyms": ["CRP", "СРБ", "С-реактивный белок"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0, "max": 5}
+    ]
+  },
+  "uric_acid": {
+    "name_ru": "Мочевая кислота",
+    "name_en": "Uric acid",
+    "unit": "мкмоль/л",
+    "category": "Биохимия",
+    "synonyms": ["UA", "мочевая кислота"],
+    "norms": [
+      {"gender": "male",   "age_from": 0, "age_to": 200, "min": 200, "max": 420},
+      {"gender": "female", "age_from": 0, "age_to": 200, "min": 140, "max": 340}
+    ]
+  },
+  "amylase": {
+    "name_ru": "Амилаза",
+    "name_en": "Amylase",
+    "unit": "ед/л",
+    "category": "Биохимия",
+    "synonyms": ["AMY", "амилаза"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 28, "max": 100}
+    ]
+  },
+  "cholesterol_total": {
+    "name_ru": "Общий холестерин",
+    "name_en": "Total cholesterol",
+    "unit": "ммоль/л",
+    "category": "Липиды",
+    "synonyms": ["CHOL", "холестерин"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 3.1, "max": 5.2}
+    ]
+  },
+  "ldl": {
+    "name_ru": "ЛПНП",
+    "name_en": "LDL cholesterol",
+    "unit": "ммоль/л",
+    "category": "Липиды",
+    "synonyms": ["LDL", "ЛПНП"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0, "max": 3.0}
+    ]
+  },
+  "hdl": {
+    "name_ru": "ЛПВП",
+    "name_en": "HDL cholesterol",
+    "unit": "ммоль/л",
+    "category": "Липиды",
+    "synonyms": ["HDL", "ЛПВП"],
+    "norms": [
+      {"gender": "male",   "age_from": 0, "age_to": 200, "min": 1.0, "max": 3.0},
+      {"gender": "female", "age_from": 0, "age_to": 200, "min": 1.2, "max": 3.0}
+    ]
+  },
+  "triglycerides": {
+    "name_ru": "Триглицериды",
+    "name_en": "Triglycerides",
+    "unit": "ммоль/л",
+    "category": "Липиды",
+    "synonyms": ["TG", "триглицериды"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0, "max": 1.7}
+    ]
+  },
+  "atherogenic_index": {
+    "name_ru": "Индекс атерогенности",
+    "name_en": "Atherogenic index",
+    "unit": "ед",
+    "category": "Липиды",
+    "synonyms": ["ИА"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0, "max": 3.0}
+    ]
+  },
+  "tsh": {
+    "name_ru": "ТТГ",
+    "name_en": "TSH",
+    "unit": "мМЕ/л",
+    "category": "Гормоны щитовидной железы",
+    "synonyms": ["TSH", "ТТГ"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0.4, "max": 4.0}
+    ]
+  },
+  "ft3": {
+    "name_ru": "Т3 свободный",
+    "name_en": "Free T3",
+    "unit": "пмоль/л",
+    "category": "Гормоны щитовидной железы",
+    "synonyms": ["fT3", "Т3 свободный"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 2.6, "max": 5.7}
+    ]
+  },
+  "ft4": {
+    "name_ru": "Т4 свободный",
+    "name_en": "Free T4",
+    "unit": "пмоль/л",
+    "category": "Гормоны щитовидной железы",
+    "synonyms": ["fT4", "Т4 свободный"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 9.0, "max": 22.0}
+    ]
+  },
+  "tpo_ab": {
+    "name_ru": "АТ-ТПО",
+    "name_en": "Anti-TPO",
+    "unit": "МЕ/мл",
+    "category": "Гормоны щитовидной железы",
+    "synonyms": ["TPO", "АТ-ТПО", "анти-ТПО"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0, "max": 34}
+    ]
+  },
+  "urine_protein": {
+    "name_ru": "Белок в моче",
+    "name_en": "Urine protein",
+    "unit": "г/л",
+    "category": "ОАМ",
+    "synonyms": ["белок в моче", "PROT"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0, "max": 0.14}
+    ]
+  },
+  "urine_glucose": {
+    "name_ru": "Глюкоза в моче",
+    "name_en": "Urine glucose",
+    "unit": "ммоль/л",
+    "category": "ОАМ",
+    "synonyms": ["глюкоза в моче"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0, "max": 1.7}
+    ]
+  },
+  "urine_leukocytes": {
+    "name_ru": "Лейкоциты в моче",
+    "name_en": "Urine leukocytes",
+    "unit": "в п/з",
+    "category": "ОАМ",
+    "synonyms": ["лейкоциты в моче"],
+    "norms": [
+      {"gender": "male",   "age_from": 0, "age_to": 200, "min": 0, "max": 3},
+      {"gender": "female", "age_from": 0, "age_to": 200, "min": 0, "max": 6}
+    ]
+  },
+  "urine_erythrocytes": {
+    "name_ru": "Эритроциты в моче",
+    "name_en": "Urine erythrocytes",
+    "unit": "в п/з",
+    "category": "ОАМ",
+    "synonyms": ["эритроциты в моче"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0, "max": 2}
+    ]
+  },
+  "urine_ketones": {
+    "name_ru": "Кетоны в моче",
+    "name_en": "Urine ketones",
+    "unit": "ммоль/л",
+    "category": "ОАМ",
+    "synonyms": ["кетоны в моче"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 0, "max": 0.5}
+    ]
+  },
+  "urine_specific_gravity": {
+    "name_ru": "Удельный вес мочи",
+    "name_en": "Urine specific gravity",
+    "unit": "ед",
+    "category": "ОАМ",
+    "synonyms": ["плотность мочи", "SG"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 1.010, "max": 1.025}
+    ]
+  },
+  "vitamin_d": {
+    "name_ru": "Витамин D (25-OH)",
+    "name_en": "Vitamin D, 25-OH",
+    "unit": "нг/мл",
+    "category": "Витамины и минералы",
+    "synonyms": ["витамин D", "25-OH-D"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 30, "max": 100}
+    ]
+  },
+  "vitamin_b12": {
+    "name_ru": "Витамин B12",
+    "name_en": "Vitamin B12",
+    "unit": "пг/мл",
+    "category": "Витамины и минералы",
+    "synonyms": ["B12", "цианокобаламин"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 200, "max": 900}
+    ]
+  },
+  "folic_acid": {
+    "name_ru": "Фолиевая кислота",
+    "name_en": "Folic acid",
+    "unit": "нг/мл",
+    "category": "Витамины и минералы",
+    "synonyms": ["folate", "фолат"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 3.0, "max": 17.0}
+    ]
+  },
+  "ferritin": {
+    "name_ru": "Ферритин",
+    "name_en": "Ferritin",
+    "unit": "нг/мл",
+    "category": "Витамины и минералы",
+    "synonyms": ["FERR", "ферритин"],
+    "norms": [
+      {"gender": "male",   "age_from": 0, "age_to": 200, "min": 30, "max": 400},
+      {"gender": "female", "age_from": 0, "age_to": 200, "min": 13, "max": 150}
+    ]
+  },
+  "iron": {
+    "name_ru": "Железо сывороточное",
+    "name_en": "Serum iron",
+    "unit": "мкмоль/л",
+    "category": "Витамины и минералы",
+    "synonyms": ["Fe", "железо"],
+    "norms": [
+      {"gender": "male",   "age_from": 0, "age_to": 200, "min": 11, "max": 30},
+      {"gender": "female", "age_from": 0, "age_to": 200, "min": 9,  "max": 30}
+    ]
+  },
+  "hba1c": {
+    "name_ru": "Гликированный гемоглобин",
+    "name_en": "HbA1c",
+    "unit": "%",
+    "category": "Углеводный обмен",
+    "synonyms": ["HbA1c", "гликированный гемоглобин"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 4.0, "max": 6.0}
+    ]
+  },
+  "insulin": {
+    "name_ru": "Инсулин",
+    "name_en": "Insulin",
+    "unit": "мкЕд/мл",
+    "category": "Углеводный обмен",
+    "synonyms": ["инсулин"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 2.6, "max": 24.9}
+    ]
+  },
+  "cortisol": {
+    "name_ru": "Кортизол",
+    "name_en": "Cortisol",
+    "unit": "нмоль/л",
+    "category": "Гормоны",
+    "synonyms": ["кортизол"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 138, "max": 635}
+    ]
+  },
+  "psa_total": {
+    "name_ru": "ПСА общий",
+    "name_en": "PSA total",
+    "unit": "нг/мл",
+    "category": "Онкомаркеры",
+    "synonyms": ["PSA", "ПСА"],
+    "norms": [
+      {"gender": "male", "age_from": 0, "age_to": 50, "min": 0, "max": 2.5},
+      {"gender": "male", "age_from": 51, "age_to": 200, "min": 0, "max": 4.0}
+    ]
+  },
+  "potassium": {
+    "name_ru": "Калий",
+    "name_en": "Potassium",
+    "unit": "ммоль/л",
+    "category": "Электролиты",
+    "synonyms": ["K", "калий"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 3.5, "max": 5.1}
+    ]
+  },
+  "sodium": {
+    "name_ru": "Натрий",
+    "name_en": "Sodium",
+    "unit": "ммоль/л",
+    "category": "Электролиты",
+    "synonyms": ["Na", "натрий"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 135, "max": 145}
+    ]
+  },
+  "calcium_total": {
+    "name_ru": "Кальций общий",
+    "name_en": "Calcium total",
+    "unit": "ммоль/л",
+    "category": "Электролиты",
+    "synonyms": ["Ca", "кальций"],
+    "norms": [
+      {"gender": "any", "age_from": 0, "age_to": 200, "min": 2.15, "max": 2.55}
+    ]
+  }
+}
