@@ -15,6 +15,10 @@ dependencies = [
     "python-dotenv>=1.0",
     "redis[hiredis]>=5.1",
     "passlib[bcrypt]>=1.7.4",
+    # passlib 1.7.x несовместим с bcrypt >=4.1: detect_wrap_bug пробует
+    # длинный probe-секрет, а bcrypt 4.1+ кидает ValueError вместо
+    # silent-truncate, из-за чего любой hash_password() падает с 500.
+    "bcrypt>=4.0,<4.1",
     "pyjwt>=2.9",
     "slowapi>=0.1.9",
     "httpx>=0.27",
